@@ -6,41 +6,57 @@
     <title>Telugu Ruchulu Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-yellow-50 text-gray-900 pb-10">
+<body class="bg-yellow-50 text-gray-900">
 
     <header class="bg-yellow-400 p-8 text-center shadow-md">
-        <h1 class="text-3xl font-serif font-bold text-red-900">Telugu Ruchulu</h1>
-        <p class="text-red-800">Authentic Catering Services</p>
+        <h1 class="text-3xl font-bold text-red-900">Telugu Ruchulu</h1>
     </header>
 
     <main class="max-w-lg mx-auto p-4">
         <div class="flex border-b-2 border-red-800 mb-6">
-            <button onclick="showTab('veg')" class="w-1/2 py-2 font-bold text-red-900 bg-yellow-200">Veg Menu</button>
-            <button onclick="showTab('nonveg')" class="w-1/2 py-2 font-bold text-red-900 bg-yellow-100">Non-Veg Menu</button>
+            <button onclick="showTab('veg')" class="w-1/2 py-2 font-bold text-red-900 bg-yellow-200">Veg</button>
+            <button onclick="showTab('nonveg')" class="w-1/2 py-2 font-bold text-red-900 bg-yellow-100">Non-Veg</button>
         </div>
 
-        <div id="veg" class="space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-red-800 pl-2">Vegetarian Items</h2>
-            <div class="bg-white p-4 rounded shadow">
-                <p>Veg Pulav</p>
-                <button class="text-sm bg-red-700 text-white px-2 py-1 rounded">Select</button>
-            </div>
+        <div id="veg-menu" class="space-y-2">
             </div>
 
-        <div id="nonveg" class="hidden space-y-4">
-            <h2 class="text-xl font-bold border-l-4 border-red-800 pl-2">Non-Veg Items</h2>
-            <div class="bg-white p-4 rounded shadow">
-                <p>Chicken Dum Biryani</p>
-                <button class="text-sm bg-red-700 text-white px-2 py-1 rounded">Select</button>
+        <div id="nonveg-menu" class="hidden space-y-2">
             </div>
-            </div>
+
+        <div class="mt-8 bg-white p-4 rounded shadow-lg border-t-4 border-red-800">
+            <h3 class="font-bold mb-2">My Selection:</h3>
+            <ul id="cart-list" class="text-sm list-disc pl-5"><li>Nothing selected yet</li></ul>
+            <button onclick="sendOrder()" class="w-full mt-4 bg-green-600 text-white py-2 rounded">Order via WhatsApp</button>
+        </div>
     </main>
 
     <script>
-        function showTab(tab) {
-            document.getElementById('veg').classList.toggle('hidden', tab !== 'veg');
-            document.getElementById('nonveg').classList.toggle('hidden', tab !== 'nonveg');
+        const vegItems = ["Veg Pulav", "Veg Biryani", "Chintapandu Pulihora", "Bagara Rice", "Gobi 65"];
+        const nvItems = ["Chicken Dum Biryani", "Mutton Dum Biryani", "Chicken 65", "Andhra Chicken Fry"];
+        let cart = [];
+
+        function render() {
+            document.getElementById('veg-menu').innerHTML = vegItems.map(i => `<div class="bg-white p-3 flex justify-between shadow-sm"><span>${i}</span><button onclick="add('${i}')" class="bg-red-700 text-white px-2 py-1 rounded text-xs">+</button></div>`).join('');
+            document.getElementById('nonveg-menu').innerHTML = nvItems.map(i => `<div class="bg-white p-3 flex justify-between shadow-sm"><span>${i}</span><button onclick="add('${i}')" class="bg-red-700 text-white px-2 py-1 rounded text-xs">+</button></div>`).join('');
         }
+
+        function add(item) { cart.push(item); updateCart(); }
+        
+        function updateCart() {
+            document.getElementById('cart-list').innerHTML = cart.map(i => `<li>${i}</li>`).join('');
+        }
+
+        function showTab(t) {
+            document.getElementById('veg-menu').classList.toggle('hidden', t !== 'veg');
+            document.getElementById('nonveg-menu').classList.toggle('hidden', t !== 'nonveg');
+        }
+
+        function sendOrder() {
+            const msg = `Order: ${cart.join(', ')}`;
+            window.open(`https://wa.me/919949959087?text=${encodeURIComponent(msg)}`);
+        }
+        render();
     </script>
 </body>
 </html>
