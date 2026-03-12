@@ -1,62 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telugu Ruchulu Menu</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telugu Ruchulu Catering</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-yellow-50 text-gray-900">
 
-    <header class="bg-yellow-400 p-8 text-center shadow-md">
-        <h1 class="text-3xl font-bold text-red-900">Shree Authentic Telugu Ruchulu</h1>
-    </header>
+<!-- HEADER WITH IMAGE -->
+<header class="relative">
+<img src="banner.jpg" class="w-full h-48 object-cover">
+<div class="absolute inset-0 flex items-center justify-center">
+<h1 class="text-4xl font-bold text-white drop-shadow-lg">
+Authentic Telugu Ruchulu
+</h1>
+</div>
+</header>
 
-    <main class="max-w-lg mx-auto p-4">
-        <div class="flex border-b-2 border-red-800 mb-6">
-            <button onclick="showTab('veg')" class="w-1/2 py-2 font-bold text-red-900 bg-yellow-200">Veg</button>
-            <button onclick="showTab('nonveg')" class="w-1/2 py-2 font-bold text-red-900 bg-yellow-100">Non-Veg</button>
-        </div>
+<main class="max-w-4xl mx-auto p-4">
 
-        <div id="veg-menu" class="space-y-2">
-            </div>
+<!-- TAB SWITCH -->
+<div class="flex border-b-4 border-red-800 mb-6">
+<button onclick="showTab('veg')" class="w-1/2 py-3 font-bold text-red-900 bg-yellow-200">
+Veg Menu
+</button>
 
-        <div id="nonveg-menu" class="hidden space-y-2">
-            </div>
+<button onclick="showTab('nonveg')" class="w-1/2 py-3 font-bold text-red-900 bg-yellow-100">
+Non-Veg Menu
+</button>
+</div>
 
-        <div class="mt-8 bg-white p-4 rounded shadow-lg border-t-4 border-red-800">
-            <h3 class="font-bold mb-2">My Selection:</h3>
-            <ul id="cart-list" class="text-sm list-disc pl-5"><li>Nothing selected yet</li></ul>
-            <button onclick="sendOrder()" class="w-full mt-4 bg-green-600 text-white py-2 rounded">Order via WhatsApp</button>
-        </div>
-    </main>
 
-    <script>
-        const vegItems = ["Veg Pulav", "Veg Biryani", "Chintapandu Pulihora", "Bagara Rice", "Gobi 65"];
-        const nvItems = ["Chicken Dum Biryani", "Mutton Dum Biryani", "Chicken 65", "Andhra Chicken Fry"];
-        let cart = [];
+<!-- VEG MENU -->
+<div id="veg-menu">
 
-        function render() {
-            document.getElementById('veg-menu').innerHTML = vegItems.map(i => `<div class="bg-white p-3 flex justify-between shadow-sm"><span>${i}</span><button onclick="add('${i}')" class="bg-red-700 text-white px-2 py-1 rounded text-xs">+</button></div>`).join('');
-            document.getElementById('nonveg-menu').innerHTML = nvItems.map(i => `<div class="bg-white p-3 flex justify-between shadow-sm"><span>${i}</span><button onclick="add('${i}')" class="bg-red-700 text-white px-2 py-1 rounded text-xs">+</button></div>`).join('');
-        }
+<h2 class="text-xl font-bold text-red-800 mt-4 mb-2">Premium Rice</h2>
+<div class="grid grid-cols-2 gap-2">
+<div class="item">Veg Pulav</div>
+<div class="item">Veg Biryani</div>
+<div class="item">Panasakaya Pulav</div>
+<div class="item">Kaju Mutter Pulav</div>
+</div>
 
-        function add(item) { cart.push(item); updateCart(); }
-        
-        function updateCart() {
-            document.getElementById('cart-list').innerHTML = cart.map(i => `<li>${i}</li>`).join('');
-        }
+<h2 class="text-xl font-bold text-red-800 mt-6 mb-2">Flavoured Rice</h2>
+<div class="grid grid-cols-2 gap-2">
+<div class="item">Chintapandu Pulihora</div>
+<div class="item">Coconut Rice</div>
+<div class="item">Jeera Rice</div>
+<div class="item">Bagara Rice</div>
+<div class="item">Kaju Ghee Rice</div>
+<div class="item">Sambar Rice</div>
+</div>
 
-        function showTab(t) {
-            document.getElementById('veg-menu').classList.toggle('hidden', t !== 'veg');
-            document.getElementById('nonveg-menu').classList.toggle('hidden', t !== 'nonveg');
-        }
+<h2 class="text-xl font-bold text-red-800 mt-6 mb-2">Veg Fry</h2>
+<div class="grid grid-cols-2 gap-2">
+<div class="item">Bendakaya Fry</div>
+<div class="item">Dondakaya Fry</div>
+<div class="item">Vankaya Pakodi</div>
+<div class="item">Bangala Dumpa Vepudu</div>
+<div class="item">Cabbage 65</div>
+<div class="item">Gobi 65</div>
+</div>
 
-        function sendOrder() {
-            const msg = `Order: ${cart.join(', ')}`;
-            window.open(`https://wa.me/919949959087?text=${encodeURIComponent(msg)}`);
-        }
-        render();
-    </script>
+<h2 class="text-xl font-bold text-red-800 mt-6 mb-2">Dal</h2>
+<div class="grid grid-cols-2 gap-2">
+<div class="item">Tomato Pappu</div>
+<div class="item">Palakura Pappu</div>
+<div class="item">Dosakaya Pappu</div>
+<div class="item">Gongura Pappu</div>
+</div>
+
+<h2 class="text-xl font-bold text-red-800 mt-6 mb-2">Desserts</h2>
+<div class="grid grid-cols-2 gap-2">
+<div class="item">Boorelu</div>
+<div class="item">Bobbatlu</div>
+<div class="item">Gulab Jamun</div>
+<div class="item">Carrot Halwa</div>
+<div class="item">Rava Kesari</div>
+</div>
+
+</div>
+
+
+
+<!-- NON VEG MENU -->
+
+<div id="nonveg-menu" class="hidden">
+
+<h2 class="text-xl font-bold text-red-800 mt-4 mb-2">Chicken Items</h2>
+
+<div class="grid grid-cols-2 gap-2">
+
+<div class="item">Chicken 65</div>
+<div class="item">Chilli Chicken</div>
+<div class="item">Chicken Manchuria</div>
+<div class="item">Chicken Majestic</div>
+
+</div>
+
+
+<h2 class="text-xl font-bold text-red-800 mt-6 mb-2">Biryani</h2>
+
+<div class="grid grid-cols-2 gap-2">
+
+<div class="item">Chicken Dum Biryani</div>
+<div class="item">Chicken Fry Piece Biryani</div>
+<div class="item">Mutton Dum Biryani</div>
+
+</div>
+
+
+<h2 class="text-xl font-bold text-red-800 mt-6 mb-2">Mutton Curry</h2>
+
+<div class="grid grid-cols-2 gap-2">
+
+<div class="item">Mutton Curry</div>
+<div class="item">Mutton Rogan Josh</div>
+<div class="item">Gongura Mutton</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CART -->
+<div class="mt-10 bg-white p-4 rounded shadow-lg border-t-4 border-red-800">
+
+<h3 class="font-bold mb-2 text-lg">My Selection</h3>
+
+<ul id="cart-list" class="text-sm list-disc pl-5">
+<li>No items selected</li>
+</ul>
+
+<button onclick="sendOrder()" class="w-full mt-4 bg-green-600 text-white py-2 rounded">
+Order via WhatsApp
+</button>
+
+</div>
+
+</main>
+
+
+
+<style>
+
+.item{
+background:white;
+padding:10px;
+border-radius:6px;
+box-shadow:0 2px 4px rgba(0,0,0,0.1);
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.item::after{
+content:"+";
+background:#b91c1c;
+color:white;
+padding:2px 8px;
+border-radius:4px;
+}
+
+</style>
+
+
+<script>
+
+let cart=[];
+
+document.querySelectorAll(".item").forEach(el=>{
+el.addEventListener("click",()=>{
+let item=el.innerText.replace("+","");
+cart.push(item);
+updateCart();
+});
+});
+
+function updateCart(){
+
+if(cart.length===0){
+document.getElementById("cart-list").innerHTML="<li>No items selected</li>";
+return;
+}
+
+document.getElementById("cart-list").innerHTML=
+cart.map(i=>`<li>${i}</li>`).join("");
+
+}
+
+function showTab(t){
+
+document.getElementById("veg-menu").classList.toggle("hidden",t!=="veg");
+document.getElementById("nonveg-menu").classList.toggle("hidden",t!=="nonveg");
+
+}
+
+function sendOrder(){
+
+const msg="Catering Order:\n"+cart.join("\n");
+
+window.open(`https://wa.me/919949959087?text=${encodeURIComponent(msg)}`);
+
+}
+
+</script>
+
 </body>
 </html>
