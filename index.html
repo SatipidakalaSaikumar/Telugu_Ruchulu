@@ -1,6 +1,6 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +9,70 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+}
+
+.menu-card{
+background:white;
+border-radius:12px;
+padding:14px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:0.2s;
+}
+
+.menu-card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+.qty-btn{
+background:#b91c1c;
+color:white;
+width:26px;
+height:26px;
+border-radius:6px;
+font-weight:bold;
+}
+
+.section-title{
+font-size:24px;
+font-weight:700;
+margin-top:40px;
+margin-bottom:15px;
+border-left:5px solid #b91c1c;
+padding-left:10px;
+}
+
+</style>
+
 </head>
 
 
-<body class="bg-gradient-to-b from-yellow-50 to-orange-100 text-gray-800">
+<body class="bg-gradient-to-b from-yellow-50 to-orange-100">
 
 
-<!-- HERO HEADER -->
+<!-- HERO -->
 
-<header class="relative h-64">
+<header class="relative h-[320px]">
 
 <img src="banner.jpg" class="w-full h-full object-cover">
 
-<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
+<div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white text-center">
 
-<h1 class="text-5xl font-bold tracking-wide">
+<h1 class="text-5xl font-bold">
 Authentic Telugu Ruchulu
 </h1>
 
-<p class="text-lg mt-2">
-Traditional Catering Services
+<p class="mt-3 text-lg">
+Traditional Andhra Catering Services
 </p>
 
 </div>
@@ -37,18 +81,23 @@ Traditional Catering Services
 
 
 
-<main class="max-w-6xl mx-auto p-4">
+<div class="max-w-7xl mx-auto p-6 grid md:grid-cols-3 gap-6">
 
 
-<!-- MENU TABS -->
+<!-- MENU AREA -->
 
-<div class="flex border-b-4 border-red-700 mb-8">
+<div class="md:col-span-2">
 
-<button onclick="showTab('veg')" class="w-1/2 py-3 font-bold bg-yellow-200">
+
+<!-- TAB BUTTONS -->
+
+<div class="flex mb-6 rounded overflow-hidden shadow">
+
+<button onclick="showTab('veg')" class="flex-1 bg-yellow-200 py-3 font-semibold">
 Veg Menu
 </button>
 
-<button onclick="showTab('nonveg')" class="w-1/2 py-3 font-bold bg-yellow-100">
+<button onclick="showTab('nonveg')" class="flex-1 bg-yellow-100 py-3 font-semibold">
 Non-Veg Menu
 </button>
 
@@ -60,147 +109,64 @@ Non-Veg Menu
 
 <div id="veg-menu">
 
+<h2 class="section-title">Desserts</h2>
 
-<h2 class="section">Desserts</h2>
+<div class="grid md:grid-cols-2 gap-3">
 
-<div class="menu-grid">
-
-<div class="item">Poornalu (Boorelu)</div>
-<div class="item">Bobbatlu</div>
-<div class="item">Chakra Pongal</div>
-<div class="item">Gulab Jamun</div>
-<div class="item">Kala Jamun</div>
-<div class="item">Carrot Halwa</div>
-<div class="item">Kaddu Ka Kheer</div>
-<div class="item">Rava Kesari</div>
-<div class="item">Double Ka Meetha</div>
-
-</div>
-
-
-
-<h2 class="section">Veg Hot Items</h2>
-
-<div class="menu-grid">
-
-<div class="item">Mirchi Bajji</div>
-<div class="item">Cut Mirchi</div>
-<div class="item">Aratikaya Bajji</div>
-<div class="item">Mix Veg Pakoda</div>
-<div class="item">Masala Vada</div>
-<div class="item">Chitti Gara</div>
+<div class="menu-card">Poornalu</div>
+<div class="menu-card">Bobbatlu</div>
+<div class="menu-card">Chakra Pongal</div>
+<div class="menu-card">Gulab Jamun</div>
+<div class="menu-card">Kala Jamun</div>
+<div class="menu-card">Carrot Halwa</div>
+<div class="menu-card">Kaddu Ka Kheer</div>
+<div class="menu-card">Rava Kesari</div>
+<div class="menu-card">Double Ka Meetha</div>
 
 </div>
 
 
+<h2 class="section-title">Flavoured Rice</h2>
 
-<h2 class="section">Veg Appetizers</h2>
+<div class="grid md:grid-cols-2 gap-3">
 
-<div class="menu-grid">
-
-<div class="item">Veg Manchurian</div>
-<div class="item">Veg Gold Coin</div>
-<div class="item">Veg Cutlet</div>
-<div class="item">Babycorn 65</div>
-<div class="item">Gobi 65</div>
-<div class="item">Mushroom 65</div>
-<div class="item">Paneer 65</div>
-
-</div>
-
-
-
-<h2 class="section">Indian Breads</h2>
-
-<div class="menu-grid">
-
-<div class="item">Phulka</div>
-<div class="item">Poori</div>
-<div class="item">Chapathi</div>
+<div class="menu-card">Veg Pulav</div>
+<div class="menu-card">Veg Biryani</div>
+<div class="menu-card">Panasakaya Pulav</div>
+<div class="menu-card">Kaju Mutter Pulav</div>
+<div class="menu-card">Chintapandu Pulihora</div>
+<div class="menu-card">Coconut Rice</div>
+<div class="menu-card">Jeera Rice</div>
+<div class="menu-card">Bagara Rice</div>
+<div class="menu-card">Kaju Ghee Rice</div>
 
 </div>
 
 
+<h2 class="section-title">Veg Fry</h2>
 
-<h2 class="section">Veg North Indian</h2>
+<div class="grid md:grid-cols-2 gap-3">
 
-<div class="menu-grid">
-
-<div class="item">Paneer Butter Masala</div>
-<div class="item">Kadai Paneer</div>
-<div class="item">Mushroom Masala</div>
-<div class="item">Mix Veg Curry</div>
-<div class="item">Aloo Mutter</div>
-<div class="item">Chana Masala</div>
-<div class="item">Methi Chaman</div>
+<div class="menu-card">Bendakaya Fry</div>
+<div class="menu-card">Dondakaya Fry</div>
+<div class="menu-card">Vankaya Pakodi</div>
+<div class="menu-card">Bangala Dumpa Vepudu</div>
+<div class="menu-card">Cabbage 65</div>
+<div class="menu-card">Gobi 65</div>
 
 </div>
 
 
+<h2 class="section-title">Dal</h2>
 
-<h2 class="section">Flavoured Rice</h2>
+<div class="grid md:grid-cols-2 gap-3">
 
-<div class="menu-grid">
-
-<div class="item">Veg Pulav</div>
-<div class="item">Veg Biryani</div>
-<div class="item">Panasakaya Pulav</div>
-<div class="item">Kaju Mutter Pulav</div>
-<div class="item">Chintapandu Pulihora</div>
-<div class="item">Avakaya Mudda Pappu Ghee Rice</div>
-<div class="item">Coconut Rice</div>
-<div class="item">Jeera Rice</div>
-<div class="item">Bagara Rice</div>
-<div class="item">Kaju Ghee Rice</div>
+<div class="menu-card">Tomato Pappu</div>
+<div class="menu-card">Palakura Pappu</div>
+<div class="menu-card">Dosakaya Pappu</div>
+<div class="menu-card">Gongura Pappu</div>
 
 </div>
-
-
-
-<h2 class="section">Veg Fry</h2>
-
-<div class="menu-grid">
-
-<div class="item">Bendakaya Fry</div>
-<div class="item">Dondakaya Fry</div>
-<div class="item">Kanda Turumu</div>
-<div class="item">Vankaya Pakodi</div>
-<div class="item">Bangala Dumpa Vepudu</div>
-<div class="item">Cabbage 65</div>
-<div class="item">Gobi 65</div>
-<div class="item">Kakarakaya Fry</div>
-
-</div>
-
-
-
-<h2 class="section">Dal</h2>
-
-<div class="menu-grid">
-
-<div class="item">Mamidikaya Pappu</div>
-<div class="item">Tomato Pappu</div>
-<div class="item">Palakura Pappu</div>
-<div class="item">Dosakaya Pappu</div>
-<div class="item">Thotakura Pappu</div>
-<div class="item">Gongura Pappu</div>
-
-</div>
-
-
-
-<h2 class="section">Sambar & Rasam</h2>
-
-<div class="menu-grid">
-
-<div class="item">Sambar</div>
-<div class="item">Pappucharu</div>
-<div class="item">Miriyala Rasam</div>
-<div class="item">Tomato Rasam</div>
-<div class="item">Pachipulusu</div>
-
-</div>
-
 
 </div>
 
@@ -211,54 +177,39 @@ Non-Veg Menu
 
 <div id="nonveg-menu" class="hidden">
 
+<h2 class="section-title">Chicken Items</h2>
 
-<h2 class="section">Chicken Appetizers</h2>
+<div class="grid md:grid-cols-2 gap-3">
 
-<div class="menu-grid">
-
-<div class="item">Chicken 65</div>
-<div class="item">Chilli Chicken</div>
-<div class="item">Chicken Manchuria</div>
-<div class="item">Kaju Chicken Pakoda</div>
-<div class="item">Chicken Majestic</div>
+<div class="menu-card">Chicken 65</div>
+<div class="menu-card">Chicken Majestic</div>
+<div class="menu-card">Chilli Chicken</div>
+<div class="menu-card">Chicken Manchuria</div>
 
 </div>
 
 
+<h2 class="section-title">Chicken Curry</h2>
 
-<h2 class="section">Chicken Curry</h2>
+<div class="grid md:grid-cols-2 gap-3">
 
-<div class="menu-grid">
-
-<div class="item">Andhra Chicken Fry</div>
-<div class="item">Andhra Chicken Curry</div>
-<div class="item">Kadai Chicken</div>
-<div class="item">Dum Chicken</div>
-<div class="item">Methi Chicken</div>
+<div class="menu-card">Andhra Chicken Fry</div>
+<div class="menu-card">Andhra Chicken Curry</div>
+<div class="menu-card">Kadai Chicken</div>
+<div class="menu-card">Methi Chicken</div>
 
 </div>
 
 
+<h2 class="section-title">Biryani</h2>
 
-<h2 class="section">Mutton Curry</h2>
+<div class="grid md:grid-cols-2 gap-3">
 
-<div class="menu-grid">
-
-<div class="item">Mutton Curry</div>
-<div class="item">Mutton Rogan Josh</div>
-<div class="item">Gongura Mutton</div>
+<div class="menu-card">Chicken Dum Biryani</div>
+<div class="menu-card">Chicken Fry Piece Biryani</div>
+<div class="menu-card">Mutton Dum Biryani</div>
 
 </div>
-
-
-
-<h2 class="section">Biryani</h2>
-
-<div class="menu-grid">
-
-<div class="item">Chicken Dum Biryani</div>
-<div class="item">Chicken Fry Piece Biryani</div>
-<div class="item">Mutton Dum Biryani</div>
 
 </div>
 
@@ -266,83 +217,34 @@ Non-Veg Menu
 
 
 
+<!-- CART PANEL -->
 
-<!-- CART -->
-
-<div class="mt-12 bg-white rounded-xl shadow-lg p-6">
+<div class="bg-white rounded-xl shadow-lg p-6 h-fit sticky top-6">
 
 <h3 class="text-xl font-bold mb-4">
-My Order
+Your Order
 </h3>
 
-<ul id="cart" class="space-y-1 text-gray-700"></ul>
+<ul id="cart" class="text-sm space-y-1 mb-4">
+<li>No items selected</li>
+</ul>
 
 
-<div class="flex gap-3 mt-6">
+<div class="flex gap-2">
 
-<button onclick="clearCart()" class="w-1/2 bg-gray-500 text-white py-2 rounded-lg">
+<button onclick="clearCart()" class="flex-1 bg-gray-500 text-white py-2 rounded">
 Clear
 </button>
 
-<button onclick="sendOrder()" class="w-1/2 bg-green-600 text-white py-2 rounded-lg">
-Order via WhatsApp
+<button onclick="sendOrder()" class="flex-1 bg-green-600 text-white py-2 rounded">
+WhatsApp Order
 </button>
 
 </div>
 
 </div>
 
-
-</main>
-
-
-
-
-<style>
-
-.section{
-font-size:24px;
-font-weight:bold;
-margin-top:35px;
-margin-bottom:15px;
-border-left:5px solid #b91c1c;
-padding-left:10px;
-}
-
-.menu-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:12px;
-}
-
-.item{
-background:white;
-padding:12px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
-display:flex;
-justify-content:space-between;
-align-items:center;
-cursor:pointer;
-}
-
-.qty-box{
-display:flex;
-gap:6px;
-align-items:center;
-}
-
-.qty-btn{
-background:#b91c1c;
-color:white;
-width:22px;
-height:22px;
-border-radius:4px;
-font-size:14px;
-}
-
-</style>
-
+</div>
 
 
 
@@ -350,17 +252,21 @@ font-size:14px;
 
 let cart={};
 
-document.querySelectorAll(".item").forEach(el=>{
+document.querySelectorAll(".menu-card").forEach(el=>{
 
 let name=el.innerText;
 
-el.innerHTML=
-`<span>${name}</span>
-<div class="qty-box">
+el.innerHTML=`
+<span>${name}</span>
+
+<div class="flex gap-2 items-center">
+
 <button class="qty-btn minus">-</button>
 <span class="qty">0</span>
 <button class="qty-btn plus">+</button>
-</div>`;
+
+</div>
+`;
 
 });
 
@@ -370,11 +276,14 @@ document.addEventListener("click",function(e){
 
 if(e.target.classList.contains("plus")){
 
-let item=e.target.closest(".item");
-let name=item.querySelector("span").innerText;
-let qty=item.querySelector(".qty");
+let card=e.target.closest(".menu-card");
+
+let name=card.querySelector("span").innerText;
+
+let qty=card.querySelector(".qty");
 
 let q=parseInt(qty.innerText)+1;
+
 qty.innerText=q;
 
 cart[name]=q;
@@ -387,13 +296,15 @@ updateCart();
 
 if(e.target.classList.contains("minus")){
 
-let item=e.target.closest(".item");
-let name=item.querySelector("span").innerText;
-let qty=item.querySelector(".qty");
+let card=e.target.closest(".menu-card");
+
+let name=card.querySelector("span").innerText;
+
+let qty=card.querySelector(".qty");
 
 let q=parseInt(qty.innerText);
 
-if(q>0){q--;}
+if(q>0) q--;
 
 qty.innerText=q;
 
@@ -418,10 +329,8 @@ let list=document.getElementById("cart");
 let items=Object.keys(cart);
 
 if(items.length===0){
-
 list.innerHTML="<li>No items selected</li>";
 return;
-
 }
 
 list.innerHTML=items.map(i=>`<li>${i} x ${cart[i]}</li>`).join("");
@@ -466,4 +375,3 @@ document.getElementById("nonveg-menu").classList.toggle("hidden",t!=="nonveg");
 
 </body>
 </html>
-```
