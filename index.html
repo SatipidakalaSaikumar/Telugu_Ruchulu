@@ -59,7 +59,15 @@ Non-Veg Menu
 
 <div class="grid grid-cols-2 gap-2">
 
-<div class="item">Poornalu (Boorelu)</div>
+<div class="item flex justify-between items-center">
+  <span class="item-name">Poornalu(Boorelu)</span>
+
+  <div class="flex items-center gap-2">
+    <button class="minus bg-red-500 text-white px-2 rounded">-</button>
+    <span class="qty">0</span>
+    <button class="plus bg-green-600 text-white px-2 rounded">+</button>
+  </div>
+</div>
 <div class="item">Bobbatlu (Polelu)</div>
 <div class="item">Chakra Pongal</div>
 <div class="item">Gulab Jamun</div>
@@ -369,28 +377,47 @@ border-radius:4px;
 
 <script>
 
-let cart = [];
+let cart = {};
 
 document.addEventListener("click", function(e){
 
-if(e.target.classList.contains("item")){
+// PLUS BUTTON
+if(e.target.classList.contains("plus")){
 
-let item = e.target.innerText;
+let itemDiv = e.target.closest(".item");
+let name = itemDiv.querySelector(".item-name").innerText;
+let qtySpan = itemDiv.querySelector(".qty");
 
-let index = cart.indexOf(item);
+let qty = parseInt(qtySpan.innerText);
+qty++;
 
-if(index === -1){
+qtySpan.innerText = qty;
 
-// add item
-cart.push(item);
-e.target.classList.add("selected");
+cart[name] = qty;
 
+updateCart();
+
+}
+
+
+// MINUS BUTTON
+if(e.target.classList.contains("minus")){
+
+let itemDiv = e.target.closest(".item");
+let name = itemDiv.querySelector(".item-name").innerText;
+let qtySpan = itemDiv.querySelector(".qty");
+
+let qty = parseInt(qtySpan.innerText);
+
+if(qty > 0){
+qty--;
+qtySpan.innerText = qty;
+}
+
+if(qty === 0){
+delete cart[name];
 }else{
-
-// remove item
-cart.splice(index,1);
-e.target.classList.remove("selected");
-
+cart[name] = qty;
 }
 
 updateCart();
@@ -398,28 +425,32 @@ updateCart();
 }
 
 });
+
 
 
 function updateCart(){
 
 let cartElement = document.getElementById("cart");
 
-if(cart.length === 0){
+let items = Object.keys(cart);
+
+if(items.length === 0){
 cartElement.innerHTML = "<li>No items selected</li>";
 return;
 }
 
-cartElement.innerHTML = cart.map(i=>`<li>${i}</li>`).join("");
+cartElement.innerHTML = items.map(i => `<li>${i} x ${cart[i]}</li>`).join("");
 
 }
 
 
+
 function clearCart(){
 
-cart=[];
+cart = {};
 
-document.querySelectorAll(".item").forEach(el=>{
-el.classList.remove("selected");
+document.querySelectorAll(".qty").forEach(q=>{
+q.innerText = "0";
 });
 
 updateCart();
@@ -427,9 +458,12 @@ updateCart();
 }
 
 
+
 function sendOrder(){
 
-let msg="Catering Order:%0A"+cart.join("%0A");
+let order = Object.keys(cart).map(i => `${i} x ${cart[i]}`).join("%0A");
+
+let msg = "Catering Order:%0A" + order;
 
 window.open(`https://wa.me/919949959087?text=${msg}`);
 
