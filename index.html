@@ -369,6 +369,14 @@ border-radius:4px;
 
 <script>
 
+function clearCart(){
+
+cart = [];
+
+updateCart();
+
+}
+
 let cart=[];
 
 document.addEventListener("click",function(e){
@@ -385,8 +393,14 @@ updateCart();
 
 function updateCart(){
 
-document.getElementById("cart").innerHTML=
-cart.map(i=>`<li>${i}</li>`).join("");
+let cartElement = document.getElementById("cart");
+
+if(cart.length === 0){
+cartElement.innerHTML = "<li>No items selected</li>";
+return;
+}
+
+cartElement.innerHTML = cart.map(i => `<li>${i}</li>`).join("");
 
 }
 
