@@ -1,29 +1,35 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shree Authentic Telugu Ruchulu</title>
+<title>Authentic Telugu Ruchulu Catering</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 
-<body class="bg-yellow-50">
+<body class="bg-gradient-to-b from-yellow-50 to-orange-100 text-gray-800">
 
-<!-- HEADER -->
 
-<header class="relative">
+<!-- HERO HEADER -->
 
-<img src="WhatsApp Image 2026-03-12 at 7.22.34 PM (1).jpeg" class="w-full h-56 object-cover">
+<header class="relative h-64">
 
-<div class="absolute inset-0 flex items-center justify-center">
+<img src="banner.jpg" class="w-full h-full object-cover">
 
-<h1 class="text-4xl font-metropolis text-Black drop-shadow-lg">
-Shree Authentic Telugu Ruchulu
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white">
+
+<h1 class="text-5xl font-bold tracking-wide">
+Authentic Telugu Ruchulu
 </h1>
+
+<p class="text-lg mt-2">
+Traditional Catering Services
+</p>
 
 </div>
 
@@ -31,17 +37,18 @@ Shree Authentic Telugu Ruchulu
 
 
 
-<main class="max-w-5xl mx-auto p-4">
+<main class="max-w-6xl mx-auto p-4">
 
-<!-- TABS -->
 
-<div class="flex border-b-4 border-red-800 mb-6">
+<!-- MENU TABS -->
 
-<button onclick="showTab('veg')" class="w-1/2 py-3 bg-yellow-200 font-bold">
+<div class="flex border-b-4 border-red-700 mb-8">
+
+<button onclick="showTab('veg')" class="w-1/2 py-3 font-bold bg-yellow-200">
 Veg Menu
 </button>
 
-<button onclick="showTab('nonveg')" class="w-1/2 py-3 bg-yellow-100 font-bold">
+<button onclick="showTab('nonveg')" class="w-1/2 py-3 font-bold bg-yellow-100">
 Non-Veg Menu
 </button>
 
@@ -53,14 +60,13 @@ Non-Veg Menu
 
 <div id="veg-menu">
 
-<!-- DESSERTS -->
 
-<h2 class="heading">Desserts(Any Two)</h2>
+<h2 class="section">Desserts</h2>
 
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
-<div clsdd="item">Poornalu(Boorelu)</div>
-<div class="item">Bobbatlu (Polelu)</div>
+<div class="item">Poornalu (Boorelu)</div>
+<div class="item">Bobbatlu</div>
 <div class="item">Chakra Pongal</div>
 <div class="item">Gulab Jamun</div>
 <div class="item">Kala Jamun</div>
@@ -68,30 +74,14 @@ Non-Veg Menu
 <div class="item">Kaddu Ka Kheer</div>
 <div class="item">Rava Kesari</div>
 <div class="item">Double Ka Meetha</div>
-<div class="item">Khubani Ka Meetha</div>
-
-</div>
-
-<!-- Refreshments -->
-
-<h2 class="heading">Refreshments(Any One)</h2>
-
-<div class="grid grid-cols-2 gap-2">
-
-<div class="item">Assorted Soft drinks</div>
-<div class="item">Flavoured Juice</div>
-<div class="item">Friute Punch</div>
-<div class="item">Badam Milk Cold/Hot</div>
 
 </div>
 
 
 
-<!-- VEG HOT ITEMS -->
+<h2 class="section">Veg Hot Items</h2>
 
-<h2 class="heading">Veg Hot Items</h2>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Mirchi Bajji</div>
 <div class="item">Cut Mirchi</div>
@@ -104,14 +94,13 @@ Non-Veg Menu
 
 
 
-<!-- VEG APPETIZER -->
+<h2 class="section">Veg Appetizers</h2>
 
-<h2 class="heading">Veg Appetizers</h2>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Veg Manchurian</div>
-<div class="item">Veg Gold Coin/Veg Cutlet</div>
+<div class="item">Veg Gold Coin</div>
+<div class="item">Veg Cutlet</div>
 <div class="item">Babycorn 65</div>
 <div class="item">Gobi 65</div>
 <div class="item">Mushroom 65</div>
@@ -121,11 +110,9 @@ Non-Veg Menu
 
 
 
-<!-- BREADS -->
+<h2 class="section">Indian Breads</h2>
 
-<h2 class="heading">Indian Breads</h2>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Phulka</div>
 <div class="item">Poori</div>
@@ -135,11 +122,9 @@ Non-Veg Menu
 
 
 
-<!-- NORTH INDIAN -->
+<h2 class="section">Veg North Indian</h2>
 
-<h2 class="heading">Veg North Indian(Any one)</h2>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Paneer Butter Masala</div>
 <div class="item">Kadai Paneer</div>
@@ -151,42 +136,30 @@ Non-Veg Menu
 
 </div>
 
-<!-- RICE -->
 
-<h2 class="heading">Premium Rice(Any one)</h2>
 
-<div class="grid grid-cols-2 gap-2">
+<h2 class="section">Flavoured Rice</h2>
+
+<div class="menu-grid">
 
 <div class="item">Veg Pulav</div>
 <div class="item">Veg Biryani</div>
 <div class="item">Panasakaya Pulav</div>
 <div class="item">Kaju Mutter Pulav</div>
-
-</div>
-
-<!-- RICE -->
-
-<h2 class="heading">Flavoured Rice(Any one)</h2>
-
-<div class="grid grid-cols-2 gap-2">
-
 <div class="item">Chintapandu Pulihora</div>
 <div class="item">Avakaya Mudda Pappu Ghee Rice</div>
 <div class="item">Coconut Rice</div>
 <div class="item">Jeera Rice</div>
 <div class="item">Bagara Rice</div>
 <div class="item">Kaju Ghee Rice</div>
-<div class="item">Sambar Rice</div>
 
 </div>
 
 
 
-<!-- FRY -->
+<h2 class="section">Veg Fry</h2>
 
-<h2 class="heading">Veg Dry Fry(Any one)</h2>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Bendakaya Fry</div>
 <div class="item">Dondakaya Fry</div>
@@ -200,27 +173,10 @@ Non-Veg Menu
 </div>
 
 
-<!-- Veg Gravy -->
 
-<h2 class="heading">Veg Gravy South Indian(Any one)</h2>
+<h2 class="section">Dal</h2>
 
-<div class="grid grid-cols-2 gap-2">
-
-<div class="item">Guthivankaya Masala</div>
-<div class="item">Chikkudukai Tomato</div>
-<div class="item">Mulakkai Tomato Curry</div>
-<div class="item">Sorakaya mulakkai</div>
-<div class="item">Beerakaya Senagapappu</div>
-<div class="item">Vankai Chilakadumpa</div>
-
-</div>
-
-  
-<!-- DAL -->
-
-<h2 class="heading">Dal</h2>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Mamidikaya Pappu</div>
 <div class="item">Tomato Pappu</div>
@@ -233,11 +189,9 @@ Non-Veg Menu
 
 
 
-<!-- SAMBAR -->
+<h2 class="section">Sambar & Rasam</h2>
 
-<h2 class="heading">Sambar & Rasam</h2>
-
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Sambar</div>
 <div class="item">Pappucharu</div>
@@ -248,8 +202,8 @@ Non-Veg Menu
 </div>
 
 
-
 </div>
+
 
 
 
@@ -257,9 +211,10 @@ Non-Veg Menu
 
 <div id="nonveg-menu" class="hidden">
 
-<h2 class="heading">Chicken Appetizers</h2>
 
-<div class="grid grid-cols-2 gap-2">
+<h2 class="section">Chicken Appetizers</h2>
+
+<div class="menu-grid">
 
 <div class="item">Chicken 65</div>
 <div class="item">Chilli Chicken</div>
@@ -271,9 +226,9 @@ Non-Veg Menu
 
 
 
-<h2 class="heading">Chicken Curry</h2>
+<h2 class="section">Chicken Curry</h2>
 
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Andhra Chicken Fry</div>
 <div class="item">Andhra Chicken Curry</div>
@@ -285,9 +240,9 @@ Non-Veg Menu
 
 
 
-<h2 class="heading">Mutton Curry</h2>
+<h2 class="section">Mutton Curry</h2>
 
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Mutton Curry</div>
 <div class="item">Mutton Rogan Josh</div>
@@ -297,9 +252,9 @@ Non-Veg Menu
 
 
 
-<h2 class="heading">Biryani</h2>
+<h2 class="section">Biryani</h2>
 
-<div class="grid grid-cols-2 gap-2">
+<div class="menu-grid">
 
 <div class="item">Chicken Dum Biryani</div>
 <div class="item">Chicken Fry Piece Biryani</div>
@@ -307,90 +262,145 @@ Non-Veg Menu
 
 </div>
 
-
-
 </div>
+
 
 
 
 <!-- CART -->
 
-<div class="mt-10 bg-white p-4 shadow rounded">
+<div class="mt-12 bg-white rounded-xl shadow-lg p-6">
 
-<h3 class="font-bold mb-2 text-lg">My Order</h3>
+<h3 class="text-xl font-bold mb-4">
+My Order
+</h3>
 
-<ul id="cart"></ul>
+<ul id="cart" class="space-y-1 text-gray-700"></ul>
 
-<button onclick="clearCart()" class="bg-red-600 text-white w-full py-2 rounded mb-2">
-Clear Selection
+
+<div class="flex gap-3 mt-6">
+
+<button onclick="clearCart()" class="w-1/2 bg-gray-500 text-white py-2 rounded-lg">
+Clear
 </button>
 
-<button onclick="sendOrder()" class="bg-green-600 text-white w-full py-2 rounded">
+<button onclick="sendOrder()" class="w-1/2 bg-green-600 text-white py-2 rounded-lg">
 Order via WhatsApp
 </button>
 
 </div>
 
+</div>
+
+
 </main>
+
 
 
 
 <style>
 
-.heading{
-font-size:20px;
+.section{
+font-size:24px;
 font-weight:bold;
-color:#991b1b;
-margin-top:25px;
-margin-bottom:10px;
+margin-top:35px;
+margin-bottom:15px;
+border-left:5px solid #b91c1c;
+padding-left:10px;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:12px;
 }
 
 .item{
 background:white;
-padding:10px;
-border-radius:6px;
-box-shadow:0 2px 4px rgba(0,0,0,0.1);
-cursor:pointer;
+padding:12px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
 display:flex;
 justify-content:space-between;
+align-items:center;
+cursor:pointer;
 }
 
-.item::after{
-content:"+";
-background:#991b1b;
+.qty-box{
+display:flex;
+gap:6px;
+align-items:center;
+}
+
+.qty-btn{
+background:#b91c1c;
 color:white;
-padding:2px 8px;
+width:22px;
+height:22px;
 border-radius:4px;
+font-size:14px;
 }
 
 </style>
 
 
 
+
 <script>
 
-let cart = [];
+let cart={};
 
-document.addEventListener("click", function(e){
+document.querySelectorAll(".item").forEach(el=>{
 
-if(e.target.classList.contains("item")){
+let name=el.innerText;
 
-let item = e.target.innerText;
+el.innerHTML=
+`<span>${name}</span>
+<div class="qty-box">
+<button class="qty-btn minus">-</button>
+<span class="qty">0</span>
+<button class="qty-btn plus">+</button>
+</div>`;
 
-let index = cart.indexOf(item);
+});
 
-if(index === -1){
 
-// add item
-cart.push(item);
-e.target.classList.add("selected");
 
+document.addEventListener("click",function(e){
+
+if(e.target.classList.contains("plus")){
+
+let item=e.target.closest(".item");
+let name=item.querySelector("span").innerText;
+let qty=item.querySelector(".qty");
+
+let q=parseInt(qty.innerText)+1;
+qty.innerText=q;
+
+cart[name]=q;
+
+updateCart();
+
+}
+
+
+
+if(e.target.classList.contains("minus")){
+
+let item=e.target.closest(".item");
+let name=item.querySelector("span").innerText;
+let qty=item.querySelector(".qty");
+
+let q=parseInt(qty.innerText);
+
+if(q>0){q--;}
+
+qty.innerText=q;
+
+if(q===0){
+delete cart[name];
 }else{
-
-// remove item
-cart.splice(index,1);
-e.target.classList.remove("selected");
-
+cart[name]=q;
 }
 
 updateCart();
@@ -398,43 +408,62 @@ updateCart();
 }
 
 });
+
 
 
 function updateCart(){
 
-let cartElement = document.getElementById("cart");
+let list=document.getElementById("cart");
 
-if(cart.length === 0){
-cartElement.innerHTML = "<li>No items selected</li>";
+let items=Object.keys(cart);
+
+if(items.length===0){
+
+list.innerHTML="<li>No items selected</li>";
 return;
-}
-
-cartElement.innerHTML = cart.map(i=>`<li>${i}</li>`).join("");
 
 }
+
+list.innerHTML=items.map(i=>`<li>${i} x ${cart[i]}</li>`).join("");
+
+}
+
 
 
 function clearCart(){
 
-cart=[];
+cart={};
 
-document.querySelectorAll(".item").forEach(el=>{
-el.classList.remove("selected");
-});
+document.querySelectorAll(".qty").forEach(q=>q.innerText=0);
 
 updateCart();
 
 }
 
 
+
 function sendOrder(){
 
-let msg="Catering Order:%0A"+cart.join("%0A");
+let order=Object.keys(cart).map(i=>`${i} x ${cart[i]}`).join("%0A");
+
+let msg="Hello Telugu Ruchulu,%0ACatering Order:%0A"+order;
 
 window.open(`https://wa.me/919949959087?text=${msg}`);
 
 }
+
+
+
+function showTab(t){
+
+document.getElementById("veg-menu").classList.toggle("hidden",t!=="veg");
+document.getElementById("nonveg-menu").classList.toggle("hidden",t!=="nonveg");
+
+}
+
 </script>
+
 
 </body>
 </html>
+```
