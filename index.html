@@ -369,27 +369,36 @@ border-radius:4px;
 
 <script>
 
-function clearCart(){
+let cart = [];
 
-cart = [];
-
-updateCart();
-
-}
-
-let cart=[];
-
-document.addEventListener("click",function(e){
+document.addEventListener("click", function(e){
 
 if(e.target.classList.contains("item")){
 
-cart.push(e.target.innerText);
+let item = e.target.innerText;
+
+let index = cart.indexOf(item);
+
+if(index === -1){
+
+// add item
+cart.push(item);
+e.target.classList.add("selected");
+
+}else{
+
+// remove item
+cart.splice(index,1);
+e.target.classList.remove("selected");
+
+}
 
 updateCart();
 
 }
 
 });
+
 
 function updateCart(){
 
@@ -400,16 +409,23 @@ cartElement.innerHTML = "<li>No items selected</li>";
 return;
 }
 
-cartElement.innerHTML = cart.map(i => `<li>${i}</li>`).join("");
+cartElement.innerHTML = cart.map(i=>`<li>${i}</li>`).join("");
 
 }
 
-function showTab(t){
 
-document.getElementById("veg-menu").classList.toggle("hidden",t!=="veg");
-document.getElementById("nonveg-menu").classList.toggle("hidden",t!=="nonveg");
+function clearCart(){
+
+cart=[];
+
+document.querySelectorAll(".item").forEach(el=>{
+el.classList.remove("selected");
+});
+
+updateCart();
 
 }
+
 
 function sendOrder(){
 
@@ -418,7 +434,6 @@ let msg="Catering Order:%0A"+cart.join("%0A");
 window.open(`https://wa.me/919949959087?text=${msg}`);
 
 }
-
 </script>
 
 </body>
